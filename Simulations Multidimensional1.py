@@ -63,7 +63,7 @@ class AlphaWalk (object):
         
                     
     def Graph (self):
-        #import matplotlib.pyplot as plt
+        import matplotlib.pyplot as plt
         
         count = 0               
         for num in self.PositionsX:
@@ -78,25 +78,25 @@ class AlphaWalk (object):
                     if self.Dimension == 3:
                         self.PositionsZ [count] += self.PositionsZ [count - 1]
                 count += 1
-##        for num in self.PositionsX:
-##            if num not in points:
-##                points.append (num)
+        for num in self.PositionsX:
+            if num not in points:
+                points[num] = 1
 
 
         finalX.append (self.PositionsX[len(self.PositionsX)-1])
                 
-##        if self.Dimension == 1:
-##            plt.plot (self.PositionsX)
-##            plt.show()
-##        elif self.Dimension == 2:
-##            plt.plot (self.PositionsX, self.PositionsY)
-##            plt.show()
-##        elif self.Dimension == 3:
-##            from mpl_toolkits.mplot3d import Axes3D
-##            Fig = plt.figure()
-##            ax = Fig.gca (projection = '3d')
-##            ax.plot (self.PositionsX, self.PositionsY, self.PositionsZ)
-##            plt.show()
+        if self.Dimension == 1:
+            plt.plot (self.PositionsX)
+            plt.show()
+        elif self.Dimension == 2:
+            plt.plot (self.PositionsX, self.PositionsY)
+            plt.show()
+        elif self.Dimension == 3:
+            from mpl_toolkits.mplot3d import Axes3D
+            Fig = plt.figure()
+            ax = Fig.gca (projection = '3d')
+            ax.plot (self.PositionsX, self.PositionsY, self.PositionsZ)
+            plt.show()
 
             
     def Locations (self, Dimension, Jump):
@@ -157,7 +157,7 @@ class AlphaWalk (object):
                     continue
             count += 1
         #self.Possibilities ()
-        self.Graph()
+        #self.Graph()
 
 
     def Simulate (self, Steps, Times):
